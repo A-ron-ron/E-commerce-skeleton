@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-// import { Header } from '../component';
 import { Link } from 'react-router-dom';
+import { Header } from '../component';
 import { Context } from '../Context';
 
 export function HeaderContainer() {
@@ -13,15 +13,15 @@ export function HeaderContainer() {
     
     return (
 
-    <header className="header">
-<div className="brand">
-  <button onClick={openSide}>&#9776;</button>
-  <Link to="/" className="title">Soap Shop</Link>
-</div>
-<div className="header-links">
-  <a href="cart.html">Cart</a>
-</div>
-</header>
+    <Header.Container>
+    <Header.Brand>
+    <Header.Button onClick={openSide}>&#9776;</Header.Button>
+    <Link to="/" className="title">Soap Shop</Link>
+    </Header.Brand>
+    <Header.Links>
+    <Header.Link href="cart.html">Cart</Header.Link>
+    </Header.Links>
+    </Header.Container>
 
 );
 }

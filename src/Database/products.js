@@ -1,10 +1,17 @@
+import d1 from "../images/soap/d1.jpg"
+import d2 from "../images/soap/d2.jpg"
+import d3 from "../images/soap/d3.jpg"
+import d4 from "../images/soap/d4.jpg"
+import d5 from "../images/soap/d5.jpg"
+import d6 from "../images/soap/d6.jpg"
+
 const ProductsDB =[
     {
         _id: '1',
         name: 'Pink Soap',
         category: 'Bar',
         countInStock: 43,
-        image: '../images/soap/d1.jpg',
+        image: d1,
         price: 60,
         rating: 4.5,
         numReviews: 0,
@@ -15,7 +22,7 @@ const ProductsDB =[
         name: 'Blue Soap',
         category: 'Hand',
         countInStock: 43,
-        image: '../images/soap/d2.jpg',
+        image: d2,
         price: 50,
         rating: 4.2,
         numReviews: 0,
@@ -27,7 +34,7 @@ const ProductsDB =[
         name: 'White Soap',
         category: 'Face',
         countInStock: 43,
-        image: '../images/soap/d3.jpg',
+        image: d3,
         price: 70,
         rating: 4.5,
         numReviews: 0,
@@ -39,7 +46,7 @@ const ProductsDB =[
         name: 'Black Soap',
         category: 'Bar',
         countInStock: 43,
-        image: '../images/soap/d5.jpg',
+        image: d4,
         price: 70,
         rating: 4.5,
         numReviews: 0,
@@ -51,7 +58,7 @@ const ProductsDB =[
         name: 'Orange Soap',
         category: 'Face',
         countInStock: 43,
-        image: "../images/soap/d4.jpg",
+        image: d5,
         price: 70,
         rating: 4.5,
         numReviews: 0,
@@ -63,7 +70,7 @@ const ProductsDB =[
         name: 'Yellow Soap',
         category: 'Hand',
         countInStock: 43,
-        image: '../images/soap/d6.jpg',
+        image: d6,
         price: 70,
         rating: 4.5,
         numReviews: 0,
