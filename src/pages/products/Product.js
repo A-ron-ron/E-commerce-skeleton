@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
-import { Context } from '../Context';
+import { Context } from '../../Context';
 import { Link } from 'react-router-dom';
 import { ProductComp } from '../../component'
 
@@ -7,7 +7,7 @@ import { ProductComp } from '../../component'
 function Product(props) {
 
   const [product, setProduct] = useState('')
-  const { allProducts, setCartItems, setFaveItems, cartItems, faveItems } = useContext(Context)
+  const { allProducts, setCartItems, setFaveItems } = useContext(Context)
   const ID = props.match.params.id
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function Product(props) {
   }
 
   const handleAddToCart = () => {
-    setCartItems( prevItems => [...cartItems, ID] )
+    setCartItems( prevItems => [...prevItems, ID] )
   }
 
 
@@ -35,7 +35,7 @@ function Product(props) {
     </div>
         <ProductComp.Container>
           <ProductComp.ImageCont>
-            <ProductComp.Image src={product.image} alt="product" />
+            <ProductComp.Image src={process.env.PUBLIC_URL + product.image} alt="product" />
           </ProductComp.ImageCont>
           <ProductComp.Details>
             <ProductComp.List>
