@@ -11,8 +11,8 @@ function ContextProvider({children}) {
     const [faveItems, setFaveItems] = useState([])
     const [sidebarState, setSidebarState] = useState('translateX(-30rem)')
 
-const userCart = userData.cart;
-const userFave = userData.faveList;
+    const userCart = userData.cart;
+    const userFave = userData.faveList;
 
     useEffect(() => {
         setAllProducts(ProductsDB);
