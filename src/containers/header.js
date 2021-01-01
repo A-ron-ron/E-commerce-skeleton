@@ -19,7 +19,8 @@ export function HeaderContainer() {
     <Link to="/" className="title">Soap Shop</Link>
     </Header.Brand>
     <Header.Links>
-    <Header.Link href="cart.html">Cart</Header.Link>
+    <Link to="/cart" >Cart</Link>
+    <Link to="/favelist" >Faves</Link>
     </Header.Links>
     </Header.Container>
 

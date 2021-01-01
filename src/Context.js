@@ -6,16 +6,19 @@ const Context = React.createContext()
 
 function ContextProvider({children}) {
     const [allProducts, setAllProducts] = useState([])
-    const [userData, setUserData] = useState('')
+    const [userData, setUserData] = useState(UsersDB[1])
     const [cartItems, setCartItems] = useState([])
     const [faveItems, setFaveItems] = useState([])
     const [sidebarState, setSidebarState] = useState('translateX(-30rem)')
 
+const userCart = userData.cart;
+const userFave = userData.faveList;
+
     useEffect(() => {
         setAllProducts(ProductsDB);
         setUserData(UsersDB[1]);
-        setCartItems(userData.cart);
-        setFaveItems(userData.faveList);
+        setCartItems( prevItems => [ ...prevItems, userCart.map((item) => (item))]);
+        setFaveItems( prevItems => [ ...prevItems, userFave.map((item) => (item))])
     }, [])
 
 
@@ -27,6 +30,8 @@ function ContextProvider({children}) {
             userData,
             sidebarState,
             setSidebarState,
+            setCartItems,
+            setFaveItems,
         }}>
             {children}
         </Context.Provider>
