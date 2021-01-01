@@ -1,17 +1,10 @@
-import d1 from "../images/soap/d1.jpg"
-import d2 from "../images/soap/d2.jpg"
-import d3 from "../images/soap/d3.jpg"
-import d4 from "../images/soap/d4.jpg"
-import d5 from "../images/soap/d5.jpg"
-import d6 from "../images/soap/d6.jpg"
-
 const ProductsDB =[
     {
         _id: '1',
         name: 'Pink Soap',
         category: 'Bar',
         countInStock: 43,
-        image: d1,
+        image: "images/soap/d1.jpg",
         price: 10,
         rating: 4.5,
         numReviews: 0,
@@ -22,7 +15,7 @@ const ProductsDB =[
         name: 'Blue Soap',
         category: 'Hand',
         countInStock: 43,
-        image: d2,
+        image: "images/soap/d2.jpg",
         price: 5,
         rating: 4.2,
         numReviews: 0,
@@ -34,7 +27,7 @@ const ProductsDB =[
         name: 'White Soap',
         category: 'Face',
         countInStock: 43,
-        image: d3,
+        image: "images/soap/d3.jpg",
         price: 20,
         rating: 4.5,
         numReviews: 0,
@@ -46,7 +39,7 @@ const ProductsDB =[
         name: 'Black Soap',
         category: 'Bar',
         countInStock: 43,
-        image: d5,
+        image: "images/soap/d5.jpg",
         price: 17,
         rating: 4.5,
         numReviews: 0,
@@ -58,7 +51,7 @@ const ProductsDB =[
         name: 'Orange Soap',
         category: 'Face',
         countInStock: 43,
-        image: d4,
+        image: "images/soap/d4.jpg",
         price: 8,
         rating: 4.5,
         numReviews: 0,
@@ -70,7 +63,7 @@ const ProductsDB =[
         name: 'Yellow Soap',
         category: 'Hand',
         countInStock: 43,
-        image: d6,
+        image: "images/soap/d6.jpg",
         price: 10,
         rating: 4.5,
         numReviews: 0,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShippingPolContainer } from '../containers/shippingPol';
+import { ShippingPolContainer } from '../../containers/shippingPol';
 
 function ShippingPol () {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutContainer } from '../containers/about';
+import { AboutContainer } from '../../containers/about';
 
 function About () {
 

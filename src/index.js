@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import {BrowserRouter as Router} from "react-router-dom"
 
 import {ContextProvider} from "./Context"
 import App from "./App"
 
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <ContextProvider>
@@ -16,5 +14,3 @@ ReactDOM.render(
     </ContextProvider>,
     document.getElementById("root")
 )
-
-reportWebVitals();

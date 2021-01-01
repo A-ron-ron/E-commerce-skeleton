@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactContainer } from '../containers/contact';
+import { ContactContainer } from '../../containers/contact';
 
 function Contact () {
 

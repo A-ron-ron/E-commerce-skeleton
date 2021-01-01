@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrivacyContainer } from '../containers/privacy';
+import { PrivacyContainer } from '../../containers/privacy';
 
 function privacy () {
 

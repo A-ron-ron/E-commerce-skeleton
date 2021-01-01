@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import { Context } from '../Context';
 import { Link } from 'react-router-dom';
-import { ProductComp } from '../../component'
+import { ProductComp } from '../component'
 
 
 function Product(props) {
