@@ -7,7 +7,7 @@ import { ProductComp } from '../component'
 function Product(props) {
 
   const [product, setProduct] = useState('')
-  const { allProducts, setCartItems, setFaveItems, cartItems, faveItems } = useContext(Context)
+  const { allProducts, setCartItems, setFaveItems } = useContext(Context)
   const ID = props.match.params.id
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function Product(props) {
   }
 
   const handleAddToCart = () => {
-    setCartItems( prevItems => [...cartItems, ID] )
+    setCartItems( prevItems => [...prevItems, ID] )
   }
 
 
