@@ -6,8 +6,10 @@ import { ProductComp } from '../../component'
 
 function Product(props) {
 
-  const [product, setProduct] = useState('')
-  const { allProducts, setCartItems, setFaveItems } = useContext(Context)
+  const [product, setProduct] = useState('');
+  const [listed, setListed] = useState(false)
+  const [Qty, setQty] = useState(1)
+  const { allProducts, setCartItems, setFaveItems, faveItems } = useContext(Context)
   const ID = props.match.params.id
 
   useEffect(() => {
@@ -16,15 +18,28 @@ function Product(props) {
         setProduct(item)
       }
     })
+    faveItems.map(item =>
+      {if(item === ID){
+        setListed(true)
+      }})
   }, []);
 
+  const AddToFave = (id) => {
+   setListed(true)
+   setFaveItems(prevItems => [...prevItems, id]);
+      }
 
-  const AddToFave = () => {
-    setFaveItems( prevItems => [...prevItems, ID] )
-  }
+  const RemoveFave = (id) => {
+    setFaveItems(prevItems => prevItems.filter(item => item !== id));
+    setListed(false)
+        }
 
   const handleAddToCart = () => {
-    setCartItems( prevItems => [...prevItems, ID] )
+    const cartObj = {
+      id: ID,
+      qty: Qty
+    };
+    setCartItems( prevItems => [...prevItems, cartObj] )
   }
 
 
@@ -64,24 +79,29 @@ function Product(props) {
                 {product.countInStock > 0 ? 'In Stock' : 'Unavailable.'}
               </ProductComp.Li>
               <ProductComp.Li>
-                Qty:{' '}
+                Qty:
                 <select
-                  value={product.qty}
-                  // onChange={(e) => {1
-                  //   setQty(e.target.value);
-                  // }}
+                  value={Qty}
+                  onChange={(e) => {
+                    setQty(e.target.value);
+                  }}
                 >
-                  {/* {[...Array(product.countInStock).keys()].map((x) => (
+                  {[...Array(product.countInStock).keys()].map((x) => (
                     <option key={x + 1} value={x + 1}>
                       {x + 1}
                     </option>
-                  ))} */}
+                  ))}
                 </select>
               </ProductComp.Li>
               <ProductComp.Li>
-                  <ProductComp.ButtonP onClick={() => AddToFave()}>
+                {listed?
+                  <ProductComp.ButtonP onClick={() => RemoveFave(product._id)}>
+                    Remove From Fave List
+                  </ProductComp.ButtonP> :
+                  <ProductComp.ButtonP onClick={() => AddToFave(product._id)}>
                     Add to Fave
                   </ProductComp.ButtonP>
+                  }
               </ProductComp.Li>
               <ProductComp.Li>
                 {product.countInStock > 0 && (
