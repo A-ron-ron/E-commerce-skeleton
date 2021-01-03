@@ -1,16 +1,29 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { SignInSty } from '../../component';
+import { Context } from '../../Context'
+import UsersDB from '../../Database/users'
 
 function SignIn(props) {
+
+        
+  const { setUserData } = useContext(Context)
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
+    const FormSubmit= (e) =>{
+      e.preventDefault();
+        UsersDB.map(DB => {
+          if(DB.email === email && DB.password === password){
+            setUserData(DB)
+          }
+        })
+    }
 
     return ( 
     <SignInSty.Container>
-      <SignInSty.Form >
+      <SignInSty.Form onSubmit={(e)=>FormSubmit(e)}>
         <SignInSty.List>
           
           <SignInSty.LI>

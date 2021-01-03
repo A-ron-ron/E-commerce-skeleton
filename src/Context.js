@@ -9,7 +9,7 @@ const Context = React.createContext()
 
 function ContextProvider({children}) {
     const [allProducts, setAllProducts] = useState([])
-    const [userData, setUserData] = useState(UsersDB[0])
+    const [userData, setUserData] = useState('')
     const [cartItems, setCartItems] = useState([])
     const [faveItems, setFaveItems] = useState([])
     const [sidebarState, setSidebarState] = useState('translateX(-30rem)')
@@ -17,17 +17,17 @@ function ContextProvider({children}) {
     const [ShippingPol, setShippingPol] = useState(ShippingPolDB);
     const [Privacy, setPrivacy] = useState(PrivacyDB)
 
-    const userCart = userData.cart;
-    const userFave = userData.faveList;
-
     useEffect(() => {
         setAllProducts(ProductsDB);
-        setUserData(UsersDB[0]);
-        setCartItems( prevItems => [ ...prevItems, userCart.map((item) => (item))]);
-        setFaveItems( prevItems => [ ...prevItems, userFave.map((item) => (item))]);
+        setUserData('');
         setAbout(AboutDB);
         setShippingPol(ShippingPolDB);
         setPrivacy(PrivacyDB);
+        if (userData) {
+        setCartItems( prevItems => [ ...prevItems, userData.cart.map((item) => (item))]);
+        setFaveItems( prevItems => [ ...prevItems, userData.faveList.map((item) => (item))]);
+        }
+
     }, [])
 
 
@@ -41,6 +41,7 @@ function ContextProvider({children}) {
             setSidebarState,
             setCartItems,
             setFaveItems,
+            setUserData,
             About,
             ShippingPol,
             Privacy

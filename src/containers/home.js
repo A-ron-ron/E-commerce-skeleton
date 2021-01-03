@@ -7,6 +7,7 @@ export function HomeContainer() {
 
     const {allProducts} = useContext(Context)
 
+
     return (
         <Home.Container>
           {allProducts.map((product) => (

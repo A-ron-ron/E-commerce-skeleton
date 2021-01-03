@@ -16,10 +16,13 @@ function About () {
 
     return (
         <div>
-            {userData.isAdmin?
+            {userData?
+            userData.isAdmin?
             <AboutSty.Button onClick={()=> setEditM(prevData => !prevData)}>
             {EditM? "Return to User View" : "Edit Data"}
             </AboutSty.Button>
+            :
+            <></>
             :
             <></>
             }

@@ -9,7 +9,7 @@ function Product(props) {
   const [product, setProduct] = useState('');
   const [listed, setListed] = useState(false)
   const [Qty, setQty] = useState(1)
-  const { allProducts, setCartItems, setFaveItems, faveItems } = useContext(Context)
+  const { allProducts, setCartItems, setFaveItems, faveItems, userData } = useContext(Context)
   const ID = props.match.params.id
 
   useEffect(() => {
@@ -48,9 +48,11 @@ function Product(props) {
     <div className="back-to-result">
       <Link to="/">Back to result</Link>
     </div>
+    {product?
         <ProductComp.Container>
           <ProductComp.ImageCont>
-            <ProductComp.Image src={process.env.PUBLIC_URL + product.image} alt="product" />
+            <ProductComp.Image src={product.image} alt="product" />
+            <h2>{product.image}</h2>
           </ProductComp.ImageCont>
           <ProductComp.Details>
             <ProductComp.List>
@@ -93,6 +95,9 @@ function Product(props) {
                   ))}
                 </select>
               </ProductComp.Li>
+
+              {userData?
+              <>
               <ProductComp.Li>
                 {listed?
                   <ProductComp.ButtonP onClick={() => RemoveFave(product._id)}>
@@ -110,9 +115,16 @@ function Product(props) {
                   </ProductComp.ButtonP>
                 )}
               </ProductComp.Li>
+              </>
+              :
+              <p>To make a purchase please <Link to="/signin/">sign In</Link> or <Link to="/register/">Register</Link></p>
+
+}
             </ProductComp.List>
           </ProductComp.Action>
         </ProductComp.Container>
+        :
+        <h2>Product Not Found</h2>}
   </div>
 )
 }

@@ -6,13 +6,14 @@ import { Context } from '../Context';
 export function HeaderContainer() {
     
   const {setSidebarState, userData} = useContext(Context)
-  const {adminClick, setAdminClick} = useState(false)
+  const [adminClick, setAdminClick] = useState(false)
     
     const openSide = () => { 
         setSidebarState('translateX(0rem)')
     }
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+      e.preventDefault();
       setAdminClick(prevData => !prevData)
     }
     
@@ -20,36 +21,39 @@ export function HeaderContainer() {
 
     <Header.Container>
     <Header.Brand>
-    <Header.Button onClick={openSide}>&#9776;</Header.Button>
-    { userData? 
-      
-      userData.isAdmin?
-      <h2 onClick={() => handleClick()}>{userData.name}</h2>
-      :
-      <Link to="/profile/">{userData.name}</Link>
-      
-      : 
+      <Header.Button onClick={openSide}>&#9776;</Header.Button>
+      { userData? 
+        
+        userData.isAdmin?
+        <button onClick={(e) => handleClick(e)}>{userData.name}</button>
+        :
+        <Link to="/profile/">{userData.name}</Link>
+        
+        : 
 
-      <Link to='/signIn/'>SignIn</Link>
-    }
+        <Link to='/signIn/'>SignIn</Link>
+      }
 
-    {adminClick?
-    <>
-    <Link to="/StockManage/">Product Manage</Link>
-    <Link to="/orders/">Orders</Link>
-    <Link to="/profile">Profile</Link>
-    </>
-      :
-    <>
-    </>
-    }
+      {adminClick?
+      <>
+      <Link to="/StockManage/">Product Manage</Link>
+      <Link to="/orders/">Orders</Link>
+      <Link to="/profile">Profile</Link>
+      </>
+        :
+      <>
+      </>
+      }
 
-    <Link to="/" className="title">Soap Shop</Link>
+      <Link to="/" className="title">Soap Shop</Link>
     </Header.Brand>
-    <Header.Links>
-    <Link to="/cart" >Cart</Link>
-    <Link to="/favelist" >Faves</Link>
-    </Header.Links>
+    {userData?
+      <Header.Links>
+        <Link to="/cart" >Cart</Link>
+        <Link to="/favelist" >Faves</Link>
+      </Header.Links>
+    :
+      <></>}
     </Header.Container>
 
 );

@@ -16,26 +16,23 @@ const RemoveFromCart = (removed) => {
 }
 
 
-
-
-
-
 const QtyChange = (id, Qty) => {
-
 cartItems.map(item => {
-  if (item._id === id){
-    item.qty = Qty
-  setCartItems(prevItems => prevItems.filter(prevItem => prevItem._id !== id));
-  setCartItems(item);
-  setCartObjects(prevItems => prevItems.filter(prevItem => prevItem._id !== id));
-  setCartObjects(item);
+  if (item.id === id){
+    item.qty = Qty.target.value;
+  setCartItems(prevItems => prevItems.filter(prevItem => prevItem.id !== id));
+  setCartItems([item]);
+  setCartObjects(prevItem => prevItem.filter(prevItem => prevItem._id != item.id))
+       cartItems.map(item => {
+     allProducts.map(product => {
+     if(item.id === product._id) {
+       product.qty = item.qty;
+       setCartObjects( prevItems => [...prevItems, product])
+     }
+   })})
 }
 })
 }
-
-console.log(cartObjects, cartItems)
-
-
 
 
 useEffect(() => {
@@ -48,13 +45,13 @@ useEffect(() => {
   })})
 }, []);
 
-
+console.log(cartObjects)
 
   return <CartSty.Container>
   <CartSty.ListContainer>
     <CartSty.List>
       <CartSty.LI>
-        <CartSty.Text>1
+        <CartSty.Text>
           Shopping Cart
         </CartSty.Text>
         <CartSty.Text>
@@ -80,10 +77,13 @@ useEffect(() => {
                 </div>
                 <div>
                   Qty:
-                <select value={ item.qty } onChange={(Qty) => QtyChange(item._id, Qty)}>
+                <select value={ item.qty } 
+                onChange={(Qty) => QtyChange(item._id, Qty)}>
+                    
                     {[...Array(item.countInStock).keys()].map(x =>
                       <option key={x + 1} value={x + 1}>{x + 1}</option>
                     )}
+
                   </select>
                   <CartSty.Button type="button" className="button" onClick={() => RemoveFromCart(item)} >
                     Delete
@@ -99,17 +99,34 @@ useEffect(() => {
     </CartSty.List>
 
   </CartSty.ListContainer>
+
+{cartObjects.length > 1?  
   <CartSty.Action>
-    {/* <CartSty.Text>
-      Subtotal ( {cartObjects.reduce((a, b) => ({qty: a.qty + b.qty}))} items)
+    <CartSty.Text>
+      Subtotal ( {cartObjects.reduce((a, b) => (a.qty + b.qty))} items)
       :
-       $ {cartObjects.reduce((a, c) => ({Price: a.price + (c.price * c.qty)}))}
-    </CartSty.Text> */}
+       $ {cartObjects.reduce((a, c) => ((a.price * a.qty) + (c.price * c.qty)))}
+    </CartSty.Text>
     <CartSty.Button disabled={cartObjects.length === 0}>
       Proceed to Checkout
     </CartSty.Button>
 
   </CartSty.Action>
+  :
+  cartObjects.length > 0?
+  <CartSty.Action>
+  <CartSty.Text>
+    Subtotal ( {cartObjects[0].qty} items)
+    :
+     $ {cartObjects[0].price * cartObjects[0].qty}
+  </CartSty.Text>
+  <CartSty.Button disabled={cartObjects.length === 0}>
+    Proceed to Checkout
+  </CartSty.Button>
+
+</CartSty.Action>
+:
+<></>}
 
 </CartSty.Container>
 }

@@ -6,7 +6,7 @@ import { Context } from '../Context';
 export function SidebarContainer() {
 
         
-  const {setSidebarState} = useContext(Context)
+  const {setSidebarState, userData} = useContext(Context)
     
   const closeSide = () => { 
     setSidebarState('translateX(-30rem)')
@@ -15,6 +15,7 @@ export function SidebarContainer() {
     return (
     <Sidebar.Container>
         <Sidebar.Button onClick={closeSide}>X</Sidebar.Button>
+           
             <Sidebar.Section>
             <Sidebar.Title>Shop by catagory</Sidebar.Title>
             <Sidebar.UL>
@@ -38,6 +39,7 @@ export function SidebarContainer() {
                 </Sidebar.LI>
             </Sidebar.UL>
             </Sidebar.Section>
+            
             <Sidebar.Section>
             <Sidebar.Title>About us.</Sidebar.Title>
             <Sidebar.UL>
@@ -58,6 +60,8 @@ export function SidebarContainer() {
                 </Sidebar.LI>
             </Sidebar.UL>
             </Sidebar.Section>
+
+            {userData?
             <Sidebar.Section>
             <Sidebar.Title>About You.</Sidebar.Title>
             <Sidebar.UL>
@@ -66,6 +70,8 @@ export function SidebarContainer() {
                 </Sidebar.LI>
             </Sidebar.UL>
             </Sidebar.Section>
+            :
+            <></>}
     </Sidebar.Container>
     );
 }

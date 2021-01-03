@@ -43,7 +43,7 @@ const ProductsDB =[
         price: 17,
         rating: 4.5,
         numReviews: 0,
-        description:"It's Soap!",
+        description: "It's Soap!",
         reviews: []
       },
       {
