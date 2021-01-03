@@ -23,13 +23,11 @@ cartItems.map(item => {
   setCartItems(prevItems => prevItems.filter(prevItem => prevItem.id !== id));
   setCartItems([item]);
   setCartObjects(prevItem => prevItem.filter(prevItem => prevItem._id != item.id))
-       cartItems.map(item => {
      allProducts.map(product => {
      if(item.id === product._id) {
        product.qty = item.qty;
        setCartObjects( prevItems => [...prevItems, product])
-     }
-   })})
+   }})
 }
 })
 }
