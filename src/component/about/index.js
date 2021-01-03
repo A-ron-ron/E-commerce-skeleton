@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Inner, Item, Title, Text } from './styles/about';
+import { Container, Inner, Item, Title, Text, List, LI, Form, Input, Label, Button} from './styles/about';
 
 
-export default function About({ children, ...restProps }) {
+export default function AboutSty({ children, ...restProps }) {
     return (
         <Item {...restProps}>
             <Inner>{children}</Inner>
@@ -10,14 +10,38 @@ export default function About({ children, ...restProps }) {
     )
 }
 
-About.Container = function AboutContainer({ children, ...restProps }) {
+AboutSty.Container = function AboutStyContainer({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>;
 }
 
-About.Title = function AboutTitle({ children, ...restProps }) {
+AboutSty.Title = function AboutStyTitle({ children, ...restProps }) {
     return <Title {...restProps}>{children}</Title>;
 }
 
-About.Text = function AboutText({ children, ...restProps }) {
+AboutSty.Text = function AboutStyText({ children, ...restProps }) {
     return <Text {...restProps}>{children}</Text>;
+}
+
+AboutSty.List = function AboutStyList({ children, ...restProps }) {
+    return <List {...restProps}>{children}</List>;
+}
+
+AboutSty.LI = function AboutStyLI({ children, ...restProps }) {
+    return <LI {...restProps}>{children}</LI>;
+}
+
+AboutSty.Form = function AboutStyForm({ children, ...restProps }) {
+    return <Form {...restProps}>{children}</Form>;
+}
+
+AboutSty.Input = function AboutStyInput({ children, ...restProps }) {
+    return <Input {...restProps}>{children}</Input>;
+}
+
+AboutSty.Label = function AboutStyLabel({ children, ...restProps }) {
+    return <Label {...restProps}>{children}</Label>;
+}
+
+AboutSty.Button = function AboutStyButton({ children, ...restProps }) {
+    return <Button {...restProps}>{children}</Button>;
 }

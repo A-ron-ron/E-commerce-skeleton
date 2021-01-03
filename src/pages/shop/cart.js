@@ -54,7 +54,7 @@ useEffect(() => {
   <CartSty.ListContainer>
     <CartSty.List>
       <CartSty.LI>
-        <CartSty.Text>
+        <CartSty.Text>1
           Shopping Cart
         </CartSty.Text>
         <CartSty.Text>
