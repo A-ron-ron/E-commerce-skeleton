@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import {BrowserRouter as Router} from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 
-import {ContextProvider} from "./Context"
-import App from "./App"
+import { ContextProvider } from "./context";
+import App from "./app";
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './dev/reportWebVitals';
 
 ReactDOM.render(
     <ContextProvider>

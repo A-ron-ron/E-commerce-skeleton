@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { HomeContainer } from '../containers/home';
+import { HomeContainer } from '../component/containers/home';
 
 function Home(props) {
 

@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Context } from '../Context';
+import { context } from '../Context';
 
 
 
 function FaveList(props) {
 
-const { allProducts, faveItems } = useContext(Context)
+const { allProducts, faveItems } = useContext(context)
 const [faveObjects, setFaveObjects] = useState([])
 
 useEffect(() => {

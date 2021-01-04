@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Context } from '../Context';
+import { context } from '../context';
 
 
 
 function Cart(props) {
 
-const { allProducts, cartItems } = useContext(Context)
+const { allProducts, cartItems } = useContext(context)
 const [cartObjects, setCartObjects] = useState([])
 
 useEffect(() => {

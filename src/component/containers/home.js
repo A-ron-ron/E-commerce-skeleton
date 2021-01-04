@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Context } from '../Context';
+import { context } from '../context';
 import { Home } from '../component';
 
 export function HomeContainer() {
