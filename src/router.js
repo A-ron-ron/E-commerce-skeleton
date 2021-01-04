@@ -22,15 +22,16 @@ import FaveList from './pages/profile/faveList';
 import { SidebarContainer } from './containers/sidebar';
 import { HeaderContainer } from './containers/header';
 import { FooterContainer } from './containers/footer';
+import { MainSty } from './component';
 
 function Router() {
 
   return (
     <BrowserRouter>
-      <div className="grid-container">
+      <MainSty.Container>
         <HeaderContainer />
         <SidebarContainer />
-        <main className="main">
+        <MainSty.Pages>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/favelist" component={FaveList} />
@@ -52,9 +53,9 @@ function Router() {
             <Route path="/cart" component={Cart} />
             <Route path="/:category" component={Home} />
           </Switch>
-        </main>
+        </MainSty.Pages>
         <FooterContainer />
-      </div>
+      </MainSty.Container>
     </BrowserRouter>
   );
 }

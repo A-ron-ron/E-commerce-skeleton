@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Inner, Item, Brand, Button, Links, Link } from './styles/header';
+import { Container, Inner, Item, Brand, Button, Links, Link, LinkTitle } from './styles/header';
 
 
 export default function Header({ children, ...restProps }) {
@@ -28,4 +28,8 @@ Header.Links = function HeaderLinks({ children, ...restProps }) {
 
 Header.Link = function HeaderLink({ children, ...restProps }) {
     return <Link {...restProps}>{children}</Link>;
+}
+
+Header.LinkTitle = function HeaderLinkTitle({ children, ...restProps }) {
+    return <LinkTitle {...restProps}>{children}</LinkTitle>;
 }

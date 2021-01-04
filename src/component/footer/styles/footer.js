@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as ReachRouterLink } from 'react-router-dom'
 
 export const Container = styled.footer`
     grid-area: footer;
@@ -20,4 +21,14 @@ export const Col = styled.div`
     display: flex;
     flex-direction: column;
     margin: 3em;
+`;
+
+export const Link = styled(ReachRouterLink)`
+color: #ffffff;
+text-decoration: none;
+
+
+&:hover{
+    color: #ff8000;;
+  }
 `;

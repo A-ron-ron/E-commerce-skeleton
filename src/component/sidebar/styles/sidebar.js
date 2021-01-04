@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as ReachRouterLink } from 'react-router-dom'
 
 export const Container = styled.aside`
 position: fixed;
@@ -45,3 +46,13 @@ list-style: none;
 
 export const UL = styled.ul`
 `;
+
+export const Link = styled(ReachRouterLink)`
+color: black;
+text-decoration: none;
+
+
+&:hover{
+    color: #ff8000;;
+  }
+`

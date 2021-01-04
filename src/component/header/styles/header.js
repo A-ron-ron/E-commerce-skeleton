@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as ReachRouterLink } from 'react-router-dom';
 
 export const Container = styled.header`
 grid-area: header;
@@ -18,6 +19,8 @@ export const Item = styled.div`
 `;
 
 export const Brand = styled.div`
+display: flex;
+width: 80%;
 
 `;
 
@@ -29,10 +32,25 @@ export const Links = styled.div`
 
 `;
 
-export const Link = styled.a`
+export const Link = styled(ReachRouterLink)`
 color: #ffffff;
 text-decoration: none;
 padding: 1rem;
+
+
+&:hover{
+    color: #ff8000;;
+  }
+`;
+
+export const LinkTitle = styled(ReachRouterLink)`
+color: #ffffff;
+align-self: center;
+margin: auto;
+text-decoration: none;
+padding: 1rem;
+font-size: 3rem;
+font-weight: bold;
 
 
 &:hover{

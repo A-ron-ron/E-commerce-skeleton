@@ -11,3 +11,4 @@ export { default as Sidebar } from './sidebar';
 export { default as ProductComp } from './product';
 export { default as CartSty } from './cart';
 export { default as SignInSty } from './SignIn';
+export { default as MainSty } from './Main';

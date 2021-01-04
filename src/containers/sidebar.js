@@ -20,22 +20,22 @@ export function SidebarContainer() {
             <Sidebar.Title>Shop by catagory</Sidebar.Title>
             <Sidebar.UL>
                 <Sidebar.LI>
-                    <Link to="/" >All products</Link>
+                    <Sidebar.Link to="/" >All products</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/bar" params={{category: "bar"}}>Bars</Link>
+                    <Sidebar.Link to="/bar" params={{category: "bar"}}>Bars</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/face" category="face" >Face</Link>
+                    <Sidebar.Link to="/face" category="face" >Face</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/bath" category="bath" >Bath</Link>
+                    <Sidebar.Link to="/bath" category="bath" >Bath</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/body" category="body" >Body</Link>
+                    <Sidebar.Link to="/body" category="body" >Body</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/hair" category="hair" >Hair</Link>
+                    <Sidebar.Link to="/hair" category="hair" >Hair</Sidebar.Link>
                 </Sidebar.LI>
             </Sidebar.UL>
             </Sidebar.Section>
@@ -44,19 +44,19 @@ export function SidebarContainer() {
             <Sidebar.Title>About us.</Sidebar.Title>
             <Sidebar.UL>
                 <Sidebar.LI>
-                    <Link to="/about">About</Link>
+                    <Sidebar.Link to="/about">About</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/contact">Contact</Link>
+                    <Sidebar.Link to="/contact">Contact</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/faq">FAQ</Link>
+                    <Sidebar.Link to="/faq">FAQ</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/privacy">Privacy Policy</Link>
+                    <Sidebar.Link to="/privacy">Privacy Policy</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Link to="/shippingPolicy">Shipping and Returns</Link>
+                    <Sidebar.Link to="/shippingPolicy">Shipping and Returns</Sidebar.Link>
                 </Sidebar.LI>
             </Sidebar.UL>
             </Sidebar.Section>
@@ -66,7 +66,7 @@ export function SidebarContainer() {
             <Sidebar.Title>About You.</Sidebar.Title>
             <Sidebar.UL>
                 <Sidebar.LI>
-                <Link to="/profile">Edit Profile</Link>
+                <Sidebar.Link to="/profile">Edit Profile</Sidebar.Link>
                 </Sidebar.LI>
             </Sidebar.UL>
             </Sidebar.Section>

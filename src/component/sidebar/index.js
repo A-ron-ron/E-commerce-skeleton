@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Container, Inner, Item, Title, Section, UL, Button, LI } from './styles/sidebar';
+import { Container, Inner, Item, Title, Section, UL, Button, LI, Link } from './styles/sidebar';
 import { Context } from '../../Context'
 
 
@@ -35,4 +35,8 @@ Sidebar.LI = function SidebarLI({ children, ...restProps }) {
 
 Sidebar.UL = function SidebarUL({ children, ...restProps }) {
     return <UL {...restProps}>{children}</UL>;
+}
+
+Sidebar.Link = function SidebarLink({ children, ...restProps }) {
+    return <Link {...restProps}>{children}</Link>;
 }

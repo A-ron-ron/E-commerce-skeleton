@@ -25,32 +25,32 @@ export function HeaderContainer() {
       { userData? 
         
         userData.isAdmin?
-        <button onClick={(e) => handleClick(e)}>{userData.name}</button>
+        <Header.Link onClick={(e) => handleClick(e)}>Welcome, {userData.name}</Header.Link>
         :
-        <Link to="/profile/">{userData.name}</Link>
+        <Header.Link to="/profile/">Welcome, {userData.name}</Header.Link>
         
         : 
 
-        <Link to='/signIn/'>SignIn</Link>
+        <Header.Link to='/signIn/'>SignIn</Header.Link>
       }
 
       {adminClick?
       <>
-      <Link to="/StockManage/">Product Manage</Link>
-      <Link to="/orders/">Orders</Link>
-      <Link to="/profile">Profile</Link>
+      <Header.Link to="/StockManage/">Product Manage</Header.Link>
+      <Header.Link to="/orders/">Orders</Header.Link>
+      <Header.Link to="/profile">Profile</Header.Link>
       </>
         :
       <>
       </>
       }
 
-      <Link to="/" className="title">Soap Shop</Link>
+      <Header.LinkTitle to="/" className="title">Soap Shop</Header.LinkTitle>
     </Header.Brand>
     {userData?
       <Header.Links>
-        <Link to="/cart" >Cart</Link>
-        <Link to="/favelist" >Faves</Link>
+        <Header.Link to="/cart" >Cart</Header.Link>
+        <Header.Link to="/favelist" >Faves</Header.Link>
       </Header.Links>
     :
       <></>}

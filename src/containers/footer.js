@@ -6,12 +6,12 @@ export function FooterContainer() {
     return (
         <Footer.Container>
           <Footer.Col>
-           <Link to="/faq">FAQ</Link>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/shippingPolicy">Shipping and Returns</Link>
+           <Footer.Link to="/faq">FAQ</Footer.Link>
+            <Footer.Link to="/privacy">Privacy Policy</Footer.Link>
+            <Footer.Link to="/shippingPolicy">Shipping and Returns</Footer.Link>
           </Footer.Col>
           <Footer.Col>
-            <Link to="/contact">Contact</Link>
+            <Footer.Link to="/contact">Contact</Footer.Link>
             <a href="#">Facebook</a>
             <a href="#">Instagram</a>
           </Footer.Col>
