@@ -6,12 +6,12 @@ const paymentSchema = {
 };
 
 const orderItemSchema = new mongoose.Schema({
+  id: { type: Number, required: true },
   name: { type: String, required: true },
-  qty: { type: Number, required: true },
   image: { type: String, required: true },
   price: { type: String, required: true },
-  product: { type: Object, ref: 'Product', required: true
-  },
+  qty: { type: Number, required: true, default: 0 },
+  category: { type: String, required: true }
 });
 
 const orderSchema = new mongoose.Schema({
@@ -19,11 +19,13 @@ const orderSchema = new mongoose.Schema({
   orderItems: [orderItemSchema],
   shipping: shippingSchema,
   payment: paymentSchema,
+  totalQty: { type: Number },
   productPrice: { type: Number },
   shippingPrice: { type: Number },
   totalPrice: { type: Number },
   isPaid: { type: Boolean, default: false },
   paidAt: { type: Date },
+  deliveryDate: { type: Date },
   isDelivered: { type: Boolean, default: false },
   deliveredAt: { type: Date },
 }, {

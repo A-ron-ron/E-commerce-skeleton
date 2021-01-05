@@ -34,6 +34,7 @@ function Router() {
         <MainSty.Pages>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/:category" component={Home} />
             <Route path="/favelist" component={FaveList} />
             <Route path="/about" component={About} />
             <Route path="/faq" component={FAQ} />
@@ -51,7 +52,7 @@ function Router() {
             <Route path="/register" component={Register} />
             <Route path="/product/:id" component={Product} />
             <Route path="/cart" component={Cart} />
-            <Route path="/:category" component={Home} />
+            
           </Switch>
         </MainSty.Pages>
         <FooterContainer />

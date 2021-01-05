@@ -23,19 +23,19 @@ export function SidebarContainer() {
                     <Sidebar.Link to="/" >All products</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Sidebar.Link to="/bar" params={{category: "bar"}}>Bars</Sidebar.Link>
+                    <Sidebar.Link to="/Bar" params={{category: "bar"}}>Bars</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Sidebar.Link to="/face" category="face" >Face</Sidebar.Link>
+                    <Sidebar.Link to="/Face" category="face" >Face</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Sidebar.Link to="/bath" category="bath" >Bath</Sidebar.Link>
+                    <Sidebar.Link to="/Bath" category="bath" >Bath</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Sidebar.Link to="/body" category="body" >Body</Sidebar.Link>
+                    <Sidebar.Link to="/Body" category="body" >Body</Sidebar.Link>
                 </Sidebar.LI>
                 <Sidebar.LI>
-                    <Sidebar.Link to="/hair" category="hair" >Hair</Sidebar.Link>
+                    <Sidebar.Link to="/Hair" category="hair" >Hair</Sidebar.Link>
                 </Sidebar.LI>
             </Sidebar.UL>
             </Sidebar.Section>

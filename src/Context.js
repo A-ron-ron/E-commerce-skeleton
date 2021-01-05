@@ -17,6 +17,8 @@ function ContextProvider({children}) {
     const [About, setAbout] = useState([]);
     const [ShippingPol, setShippingPol] = useState(ShippingPolDB);
     const [Privacy, setPrivacy] = useState(PrivacyDB)
+    const [orderCur, setOrderCur] = useState([])
+    const [orderHist, setOrderHist] = useState([])
 
     useEffect(() => {
         setAllProducts(ProductsDB);
@@ -49,7 +51,9 @@ function ContextProvider({children}) {
             setUserData,
             About,
             ShippingPol,
-            Privacy
+            Privacy,
+            orderCur,
+            orderHist
         }}>
             {children}
         </Context.Provider>

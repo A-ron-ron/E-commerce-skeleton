@@ -10,6 +10,7 @@ function Profile(props) {
       <h2>Hello {userData.name}</h2>
       <p>would you like to sign-out?</p>
       <button onClick={() => setUserData([])}>Sign Out</button>
+      
     </div>
 )
 }

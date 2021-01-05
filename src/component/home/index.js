@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Inner, Item, LI, Product, Image, Name, Price, Rating } from './styles/home';
 
 
-export default function Home({ children, ...restProps }) {
+export default function HomeSty({ children, ...restProps }) {
     return (
         <Item {...restProps}>
             <Inner>{children}</Inner>
@@ -10,30 +10,30 @@ export default function Home({ children, ...restProps }) {
     )
 }
 
-Home.Container = function HomeContainer({ children, ...restProps }) {
+HomeSty.Container = function HomeStyContainer({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>;
 }
 
-Home.LI = function HomeLI({ children, ...restProps }) {
+HomeSty.LI = function HomeStyLI({ children, ...restProps }) {
     return <LI {...restProps}>{children}</LI>;
 }
 
-Home.Product = function HomeProduct({ children, ...restProps }) {
+HomeSty.Product = function HomeStyProduct({ children, ...restProps }) {
     return <Product {...restProps}>{children}</Product>;
 }
 
-Home.Image = function HomeImage({ children, ...restProps }) {
+HomeSty.Image = function HomeStyImage({ children, ...restProps }) {
     return <Image {...restProps}>{children}</Image>;
 }
 
-Home.Name = function HomeName({ children, ...restProps }) {
+HomeSty.Name = function HomeStyName({ children, ...restProps }) {
     return <Name {...restProps}>{children}</Name>;
 }
 
-Home.Price = function HomePrice({ children, ...restProps }) {
+HomeSty.Price = function HomeStyPrice({ children, ...restProps }) {
     return <Price {...restProps}>{children}</Price>;
 }
 
-Home.Rating = function HomeRating({ children, ...restProps }) {
+HomeSty.Rating = function HomeStyRating({ children, ...restProps }) {
     return <Rating {...restProps}>{children}</Rating>;
 }
