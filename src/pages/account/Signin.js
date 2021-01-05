@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { SignInSty } from '../../component';
 import { Context } from '../../Context'
 import UsersDB from '../../Database/users'
@@ -19,6 +19,14 @@ function SignIn(props) {
             setUserData(DB)
           }
         })
+
+        // ServerAPI.READ(`api/users`).map(DB => {
+        //     if(DB.email === email && DB.password === password){
+        //     setUserData(DB))  
+        //     }
+        // })
+
+        // location.replace(`/`)
     }
 
     return ( 
