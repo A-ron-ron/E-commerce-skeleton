@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
   isAdmin: { type: Boolean, required: true, default: false },
   cart: [cartSchema],
   faveList: [faveSchema],
-  shipping: shippingSchema,
+  shippingDet: shippingSchema,
   OrderCur: [orderSchema],
   OrderHist: [orderHistSchema],
 });
