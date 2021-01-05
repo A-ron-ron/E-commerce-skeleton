@@ -32,6 +32,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
     "eslint-webpack-plugin": "^2.1.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
     "file-loader": "6.1.1",
     "fs-extra": "^9.0.1",
     "html-webpack-plugin": "4.5.0",
@@ -74,7 +76,8 @@
   "scripts": {
     "frontend": "node src/frontend/scripts/start.js",
     "buildfrontend": "node src/frontend/scripts/build.js",
-    "testfrontend": "node src/frontend/scripts/test.js"
+    "testfrontend": "node src/frontend/scripts/test.js",
+    "backend": "node -r esm src/backend/index.js"
   },
   "eslintConfig": {
     "extends": [
