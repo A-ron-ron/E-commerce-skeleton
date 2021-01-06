@@ -34,9 +34,9 @@ export default (req, res, next) => {
         const html = ReactDOMServer.renderToString((
             <Context provider={ContextProvider}>
                 <Loadable.Capture report={m => modules.push(m)}>
-                <StaticRouter location={req.url} context={context}>
+                {/* <StaticRouter location={req.url} context={Context}> */}
                     <App />
-                </StaticRouter>
+                {/* </StaticRouter> */}
                 </Loadable.Capture>
             </Context>
         ));

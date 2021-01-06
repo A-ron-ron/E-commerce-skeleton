@@ -5,12 +5,11 @@ import { Context } from '../context';
 
 export function SidebarContainer() {
 
-        
-  const {setSidebarState, userData} = useContext(Context)
+    const { setSidebarState, userData } = useContext(Context)
     
-  const closeSide = () => { 
-    setSidebarState('translateX(-30rem)')
-}
+    const closeSide = () => { 
+        setSidebarState('translateX(-30rem)')
+    }
 
     return (
     <Sidebar.Container>

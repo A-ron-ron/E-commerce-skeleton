@@ -19,8 +19,12 @@ export default function server() {
     // root (/) should always serve our server rendered page
     app.use('^/$', serverRenderer);
 
+    // anything else should act as our index page
+    // react-router will take care of everything
+    app.use('*', serverRenderer);
+
     // API routes
-    app.use(routes);
+    // app.use(routes);
 
     // Start server request/response event cycle/port listening.
     Loadable.preloadAll().then(() => {
