@@ -52,7 +52,6 @@ function Router() {
             <Route path="/register" component={Register} />
             <Route path="/product/:id" component={Product} />
             <Route path="/cart" component={Cart} />
-            
           </Switch>
         </MainSty.Pages>
         <FooterContainer />

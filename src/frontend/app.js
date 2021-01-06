@@ -1,11 +1,13 @@
-import React from 'react';
 import Router from './router';
+import React, { Component } from 'react';
+import Loadable from 'react-loadable';
 
-function App() {
+import { Context } from "./context";
 
-  return (
-    <Router />
-  );
+export default class App extends Component {   
+    static contextType = Context;
+
+    render() {
+        return (<Router />);
+    }
 }
-
-export default App;

@@ -1,15 +1,35 @@
 import express from 'express';
 import path from 'path';
+import Loadable from 'react-loadable';
 
-const app = express();
+import serverRenderer from './middleware/renderer';
+
+import routes from './routes';
 
 
-app.use(express.static(path.join(__dirname, '../../dist/frontend/')));
+export default function server() {
+    const app = express();
 
-app.get('/index.html', (req, res) => {
-    const file = path.join(__dirname, '../../dist/frontend', 'index.html');
-    res.sendFile(file);
-});
+    // Setup public assets, especially for React access.
+    app.use(express.static(path.join(__dirname, '../../dist/frontend/')));
 
-app.listen(process.env.PORT);
-console.log('APP LISTENING: ' + process.env.PORT);
+    // Serve react-root, consider hash/urls history (SEO).
+    // app.get('/index.html', (req, res) => res.sendFile(path.join(__dirname, '../../dist/frontend', 'index.html')));
+
+    // root (/) should always serve our server rendered page
+    app.use('^/$', serverRenderer);
+
+    // API routes
+    app.use(routes);
+
+    // Start server request/response event cycle/port listening.
+    Loadable.preloadAll().then(() => {
+        app.listen(process.env.PORT, error => {
+            if (error) return console.error(error);
+            console.log('APP LISTENING: ' + process.env.PORT);
+        });
+    });
+
+
+    return app;
+}

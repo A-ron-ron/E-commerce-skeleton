@@ -60,4 +60,4 @@ function ContextProvider({children}) {
     )
 }
 
-export {ContextProvider, Context}
+export { ContextProvider, Context }

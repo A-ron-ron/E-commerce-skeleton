@@ -1,1 +1,1 @@
-web: node -r esm src/backend/index.js
+web: node -r @babel/register -r esm src/backend/bootstrap.js
